@@ -9,6 +9,7 @@ let verifyToken = function (request, response, next) {
     let verify = jwt.verify(request.headers.authorization, process.env.JWT_SEC);
     // console.log(verify);
 
+    
     if (verify) {
       request.body.userid = verify.id;
       // console.log(request.body);
